@@ -29,8 +29,8 @@ const employees = [
     new Employee(1005, "Rana Saleh", "Development", "Junior")
 ];
 
- console.log(Employee);
- function render(){
+//  console.log(Employee);
+ Employee.prototype.render=function(){
      for(let i=0;i<employees.length;i++){
         const employee=employees[i];
         const Name=document.querySelector(`.N${i+1}`);
@@ -40,4 +40,4 @@ const employees = [
      }
  }
 
- window.addEventListener("DOMContentLoaded",render);
+ window.addEventListener("DOMContentLoaded",Employee.prototype.render);
