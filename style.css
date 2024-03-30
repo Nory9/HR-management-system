@@ -2,6 +2,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
      color: #fff; 
+     background-color: #fcfbfc;
 }
 .contaier{
     display: flex;
@@ -15,12 +16,16 @@ body{
     justify-content: space-around;
     padding: 30px;
 }
+.nav img{
+    width: 70px;
+}
 .nav ul{
     display: inline-flex;
     gap: 100px;
     list-style: none;
 }
 .nav li a{
+    font-size: large;
     text-decoration: none;
     color: #fff;
    
@@ -31,29 +36,80 @@ body{
     color: rgb(108, 97, 118);
      background-color:rgb(231, 223, 239);
 }
-.main-sec{
-    height:70vh;
+ .main-sec{
+    margin: 20px;
     color: #333;
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    margin: 10px 0 10px 0;
-}
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 50%;
     
+} 
+#input-form{
+    color:#544e5a;
+    align-items: center;
+    display: flex; 
+    padding: 20px;
+    flex-direction: column;
+}
+.forrm{
+    /* display: flex; 
+     flex-direction: column; 
+      align-items: center;  */
+      /* justify-content: center;   */
+    border:1px solid rgb(108, 97, 118);
+    border-radius: 10px;
+    width: 70%;
 }
 
-td,th{
-border: 1px solid #dddddd;
-text-align: left;
-padding: 20px;
-text-align: center;
+.inputfield{
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: .5px rgb(108, 97, 118) dashed;
+}
+.btn{
+    background-color: rgb(169, 157, 181);
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid  rgb(108, 97, 118);
+    /* margin-left: 500px; */
+}
+.btn:hover{
+    cursor: pointer;
+    background-color:rgb(108, 97, 118) ;
 }
 
+#card-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    background-color:rgb(169, 157, 181);
+    
+    padding: 40px;
+    /* width: 250px; */
+    border-radius: 20px;
+}
+.card:hover{
+    cursor: pointer;
+    background-color:rgb(108, 97, 118) ;
+}
+.card .image{
+    width: 200px;
+    border-radius: 10px;
+}
+.card .image:hover{
+    width: 210px;
+    border-radius: 10px;
+}
 .footer{
     background-color: rgb(169, 157, 181);
     display: flex;

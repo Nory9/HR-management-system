@@ -6,38 +6,61 @@ this.level=level,
 this.image=image,
 this.salary=salary
 }
-Employee.prototype.salaryCalc=function(){
-    if(this.level=="Junior"){
-        return Math.floor(Math.random()*(1000-500+1)+500);
-    }
-    else if(this.level=="Mid-Senior"){
-        return Math.floor(Math.random()*(1500-1000+1)+1000);
-    }
-    else if(this.level=="Senior"){
-        return Math.floor(Math.random()*(2000-1500+1)+1500);
-    }
+Employee.prototype.generateID=function(){
+    return this.id=Math.floor(Math.random()*(9999-1000)+1000);
 }
-Employee.prototype.netSalary=function(){
-    return this.salary*0.075;
-}
-const employees = [
-    new Employee(1000, "Ghazi Samer", "Administration", "Senior"),
-    new Employee(1001, "Lana Ali", "Finance", "Senior"),
-    new Employee(1002, "Tamara Ayoub", "Marketing", "Senior"),
-    new Employee(1003, "Safi Walid", "Administration", "Mid-Senior"),
-    new Employee(1004, "Omar Zaid", "Development", "Senior"),
-    new Employee(1005, "Rana Saleh", "Development", "Junior")
-];
 
-//  console.log(Employee);
- Employee.prototype.render=function(){
-     for(let i=0;i<employees.length;i++){
-        const employee=employees[i];
-        const Name=document.querySelector(`.N${i+1}`);
-        const Salary=document.querySelector(`.S${i+1}`);
-        Name.textContent=employee.full_name;
-        Salary.textContent=employee.salaryCalc();
-     }
+    const form = document.getElementById("input-form");
+    const output =document.getElementById("card-container");
+// form.addEventListener("submit",outputData);
+function outputData(event){
+     event.preventDefault();
+     const full_name=document.getElementById("name").value;
+
+     const department=document.querySelector("input[name='department']:checked").value;
+
+     const level=document.querySelector('input[name="level"]:checked').value;
+
+     const image =document.getElementById("image").value;
+
+     const employee = new Employee(null ,full_name, department, level, image);
+     employee.generateID();
+
+    const card=document.createElement('div');
+    card.classList.add('card');
+
+    const img=document.createElement('img');
+    img.classList.add('image');
+    img.src=employee.image;
+    card.appendChild(img);
+
+    const name=document.createElement('p');
+    name.classList.add('name');
+    name.textContent=`Name: ${employee.full_name}`;
+    card.appendChild(name);
+
+    const id=document.createElement('p');
+    id.classList.add('id');
+    id.textContent=`ID: ${employee.id}`;
+    card.appendChild(id);
+
+    const dep=document.createElement('p');
+    dep.classList.add('dep');
+    dep.textContent=`Department: ${employee.department}`;
+    card.appendChild(dep);
+
+    const lvl=document.createElement('p');
+    lvl.textContent=`Level: ${employee.level}`;
+    lvl.classList.add('level');
+    card.appendChild(lvl);
+
+    output.appendChild(card);
  }
+ 
+ 
+ document.addEventListener("DOMContentLoaded", function() {
+    form.addEventListener("submit", outputData);
+});
 
- window.addEventListener("DOMContentLoaded",Employee.prototype.render);
+// form.addEventListener("submit",outputData);
+//  window.addEventListener("DOMContentLoaded",Employee.prototype.render);

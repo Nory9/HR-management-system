@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css" class="css">
+    <link rel="icon" type="image/x-icon" href="process (1).png">
     <title>HR-management-system</title>
 </head>
 <body>
     <div class="contaier">
     <header class="nav">
-        <h4>
-            HR-management-system
-        </h4>
+       <img src="process (1).png" alt="img">
         <ul>
             <li>
                 <a href="index.html">Home</a>
@@ -23,37 +22,40 @@
         </ul>
     </header>
     <main class="main-sec">
-      <table>
-        <tr>
-            <th>Name</th>
-            <th>Salary</th>
-        </tr>
-        <tr>
-            <td class="N1"></td>
-            <td class="S1"></td>
-        </tr>
-        <tr>
-            <td class="N2"></td>
-            <td class="S2"></td>
-        </tr>
-        <tr>
-            <td class="N3"></td>
-            <td class="S3"></td>
-        </tr>
-        <tr>
-            <td class="N4"></td>
-            <td class="S4"></td>
-        </tr>
-        <tr>
-            <td class="N5"></td>
-            <td class="S5"></td>
-        </tr>
-        <tr>
-            <td class="N6"></td>
-            <td class="S6"></td>
-        </tr>
-      </table>
-
+        <!-- <h3>please enter your information</h3> -->
+        <form id="input-form">
+            <h1>Enter you information</h1>
+        <fieldset class="forrm" >
+            <!-- <legend>Enter your information</legend> -->
+            <br>
+            <label class="lable" for="name">name</label>
+            <input class="inputfield" type="text" name="name" id="name" placeholder="enter your name">
+            <p>Choose your department</p>
+            <input class="radio" type="radio" id="Administration" name="department" value="Administration">
+            <label class="radio" for="Administration">Administration</label><br>
+            <input class="radio" type="radio" id="Marketing" name="department" value="Marketing">
+            <label class="radio" for="Marketing">Marketing</label><br>
+            <input class="radio" type="radio" id="Development" name="department" value="Development">
+            <label class="radio" for="Development">Development</label><br>
+            <input class="radio" type="radio" id="Finance" name="department" value="Finance">
+            <label class="radio" for="Finance">Finance</label>
+        </br>
+        <p>Choose your level</p>
+            <input type="radio" id="Junior" name="level" value="Junior">
+            <label for="Junior">Junior</label><br>
+            <input type="radio" id="Mid-Senior" name="level" value="Mid-Senior">
+            <label for="Mid-Senior">Mid-Senior</label><br>
+            <input type="radio" id="Senior" name="level" value="Senior">
+            <label for="Senior">Senior</label> <br><br>
+            <label for="image">image </label>
+            
+            <input class="inputfield" type="url" name="image" id="image" placeholder="enter your image url">
+            <br><br>
+            <input class="btn" type="submit" value="submit">
+           </select> 
+        </fieldset>
+    </form>
+        <div id="card-container"></div>
     </main>
     <footer class="footer">
         <p> copyright &copy;</p><a href="#" class="fa fa-facebook"></a>
