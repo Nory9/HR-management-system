@@ -1,4 +1,4 @@
 # HR-management-system
-### this website allows user to enter there information such as name,depatrment,level and their image url and then displays their information in the page 
+### this website allows users to enter their information such as name,depatrment,level and their image url and then displays the information in the page 
 
-![image](hr.png)
+![image](hr.png)u
