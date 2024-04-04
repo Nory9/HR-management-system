@@ -47,6 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("input-form");
     const output = document.getElementById("card-container");
 
+    let employees=JSON.parse(localStorage.getItem("employees"))||[];
+    employees.forEach(function (employeeData) {
+        const employee = new Employee(employeeData.id, employeeData.full_name, employeeData.department, employeeData.level, employeeData.image);
+        employee.outputData(output);
+    });
+
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -57,7 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const employee = new Employee(null, full_name, department, level, image);
         employee.generateID();
-
+        employees.push(employee);
+        localStorage.setItem("employees",JSON.stringify(employees));
         employee.outputData(output);
     });
 });
