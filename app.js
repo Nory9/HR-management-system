@@ -8,7 +8,19 @@ function Employee(id, full_name, department, level, image, salary) {
 }
 
 Employee.prototype.generateID = function () {
-    return this.id = Math.floor(Math.random() * (9999 - 1000) + 1000);
+    // return this.id =1000+
+     return this.id = Math.floor(Math.random() * (9999 - 1000) + 1000);
+}
+Employee.prototype.generateSalary =function (){
+    if(this.level=="Junior"){
+        return this.salary= Math.floor(Math.random()*(1000-500+1)+500);
+    }
+    else if(this.level=="Mid-Senior"){
+        return this.salary= Math.floor(Math.random()*(1500-1000+1)+1000);
+    }
+    else if(this.level=="Senior"){
+        return this.salary=  Math.floor(Math.random()*(2000-1500+1)+1500);
+    }
 }
 
 Employee.prototype.outputData = function (outputElement) {
@@ -39,6 +51,11 @@ Employee.prototype.outputData = function (outputElement) {
     lvl.textContent = `Level: ${this.level}`;
     lvl.classList.add('level');
     card.appendChild(lvl);
+    
+    const sal = document.createElement('p');
+    sal.classList.add('salary');
+    sal.textContent = `Salary : ${this.salary}`;
+    card.appendChild(sal);
 
     outputElement.appendChild(card);
 }
@@ -49,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let employees=JSON.parse(localStorage.getItem("employees"))||[];
     employees.forEach(function (employeeData) {
-        const employee = new Employee(employeeData.id, employeeData.full_name, employeeData.department, employeeData.level, employeeData.image);
+        const employee = new Employee(employeeData.id, employeeData.full_name, employeeData.department, employeeData.level, employeeData.image,employeeData.salary);
         employee.outputData(output);
     });
 
@@ -61,8 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const level = document.querySelector('input[name="level"]:checked').value;
         const image = document.getElementById("image").value;
 
-        const employee = new Employee(null, full_name, department, level, image);
+        const employee = new Employee(null, full_name, department, level, image,null);
         employee.generateID();
+         employee.generateSalary();
         employees.push(employee);
         localStorage.setItem("employees",JSON.stringify(employees));
         employee.outputData(output);
