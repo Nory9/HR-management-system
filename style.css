@@ -15,6 +15,7 @@ body{
     flex-direction: row;
     justify-content: space-around;
     padding: 30px;
+    width: auto;
 }
 .nav img{
     width: 70px;
@@ -117,6 +118,7 @@ body{
     align-items: center;
     justify-content: center;
     padding: 30px;
+    width: auto;
 }
 .footer p{
     margin: 15px;
@@ -128,4 +130,25 @@ body{
 }
 .footer a:hover{
     color: rgb(108, 97, 118);
+}
+
+.table{
+
+        width: 70%;
+        height: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        border: 1px solid rgb(108, 97, 118);
+        margin-left: auto;
+        margin-right: auto;
+        color: rgb(108, 97, 118);
+        border-radius: 1px;
+}
+td, th {
+    padding: 30px;
+    border-right: 1px solid rgb(108, 97, 118);
+    border-top: 1px solid rgb(108, 97, 118);
+}
+.table tr:nth-child(even) {
+    background-color: #BBBBBB;
 }
