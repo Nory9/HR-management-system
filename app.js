@@ -59,7 +59,18 @@ Employee.prototype.outputData = function (outputElement) {
 
     outputElement.appendChild(card);
 }
-
+const output = document.getElementById("card-container");
+let arr=[];
+arr.push(new Employee(1000,'Ghazi Samer','Administration','Senior','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhGJhe2cm0i7MDHOen5GoRejraG6V2v2X2i8S2ot_pEM4PMX6tZGgqQ0kOqHXq68q3iE8&usqp=CAU'));
+arr.push(new Employee(1001,'Lana Ali','Finance','Senior','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRddVmH1GCC4gPW6OuM2Jhf_HclCbeu1WtiisUHOuRqA5gEzP_t6IdavSJLqyN6Tdt0GJg&usqp=CAU'));
+arr.push(new Employee(1002,'Tamara Ayoub','Marketing','Senior','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVAZvKMptw2eorY7F5T3CKUMw2z0_UOjulm5IAaNZxklRhbQgQJZlKn6QPSJ1Zo6EDXrc&usqp=CAU'));
+arr.push(new Employee(1003,'Safi Walid','Administration','Mid-Senior','https://us.123rf.com/450wm/yupiramos/yupiramos1803/yupiramos180304632/96617963-young-man-model-avatar-character-vector-illustration-design.jpg?ver=6'));
+arr.push(new Employee(1004,'Omar Zaid','Development','Senior','https://us.123rf.com/450wm/yupiramos/yupiramos1802/yupiramos180201958/94700505-young-man-avatar-character-vector-illustration-design.jpg?ver=6'));
+arr.push(new Employee(1005,'Rana Saleh','Development','Junior','https://media.istockphoto.com/id/1364952860/vector/female-signing-ok-by-hand.jpg?s=612x612&w=0&k=20&c=sF1cveduJ-IoIv-2R9xeWaD4sqK6b6wVmOWGy4BKHL0='));
+arr.push(new Employee(1000,'Hadi Ahmad','Finance','Mid-Senior','https://us.123rf.com/450wm/yupiramos/yupiramos1802/yupiramos180209008/95163413-young-man-happy-avatar-character-vector-illustration-design.jpg?ver=6'));
+arr.forEach(x =>{
+    x.outputData(output);
+})
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("input-form");
     const output = document.getElementById("card-container");
